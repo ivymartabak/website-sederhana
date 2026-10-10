@@ -3,488 +3,896 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Digital - Solusi Modern & Inovatif</title>
-    <!-- Tailwind CSS -->
+    <title>Komunitas Midjourney - Masa Depan Gaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
                         brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0284c7',
-                            600: '#0369a1',
-                            700: '#0f172a',
+                            50: '#f0f3ff',
+                            100: '#e0e6fe',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            accent: '#8B5CF6',
+                            pink: '#EC4899',
+                            violet: '#A855F7',
+                            lightBg: '#E9ECFD',
                         }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(99, 102, 241, 0.15)',
+                        'glass-card': '0 10px 30px -10px rgba(79, 70, 229, 0.2)',
+                        'glow': '0 0 25px rgba(168, 85, 247, 0.4)',
+                        'glow-btn': '0 0 20px rgba(99, 102, 241, 0.5)',
                     }
                 }
             }
         }
     </script>
+
     <style>
-        /* Custom Keyframe Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+        /* Custom Scrollbar & Advanced Glassmorphism */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
         }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a5b4fc;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+
+        body {
+            background: #EBF0FF;
+            color: #1e1b4b;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Animated Mesh Background */
+        .bg-mesh {
+            background-color: #eef2ff;
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(192, 132, 252, 0.35) 0px, transparent 50%),
+                radial-gradient(at 90% 15%, rgba(129, 140, 248, 0.4) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(244, 114, 182, 0.25) 0px, transparent 50%),
+                radial-gradient(at 80% 85%, rgba(167, 139, 250, 0.35) 0px, transparent 50%),
+                radial-gradient(at 20% 80%, rgba(199, 210, 254, 0.5) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(168, 85, 247, 0.4);
+            box-shadow: 0 20px 35px -10px rgba(99, 102, 241, 0.25);
+        }
+
+        .glass-button {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.2s ease;
+        }
+
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-1px);
+        }
+
+        /* Floating 3D Graphic Elements Animation */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-18px) rotate(3deg); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.05); }
+        }
+
         .animate-float {
-            animation: float 4s ease-in-out infinite;
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: floatSlow 7s ease-in-out 2s infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        /* Gradient Button Styles */
+        .btn-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-gradient-orange {
+            background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn-gradient-orange:hover {
+            background: linear-gradient(135deg, #ea580c 0%, #db2777 100%);
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-sky-500 selection:text-white">
+<body class="bg-mesh min-h-screen text-slate-800 antialiased font-sans">
 
-    <!-- Navigation Bar -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
-                        <i class="fa-solid fa-cube text-xl"></i>
-                    </div>
-                    <span class="font-extrabold text-xl tracking-tight text-slate-900">MAUL BOTAK<span class="text-sky-600">STUDIO</span></span>
+    <header class="sticky top-0 z-50 px-4 lg:px-12 py-4">
+        <nav class="max-w-7xl mx-auto glass-panel rounded-full px-6 py-3 flex items-center justify-between shadow-sm">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-m text-xl font-black"></i>
+                </div>
+                <span class="font-extrabold text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-800">
+                    MAUL BOTAK
+                </span>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-700">
+                <a href="#home" class="hover:text-indigo-600 transition-colors">Beranda</a>
+                <a href="#collections" class="hover:text-indigo-600 transition-colors">Koleksi</a>
+                <a href="#about" class="hover:text-indigo-600 transition-colors">Tentang Kami</a>
+                <a href="#community" class="text-indigo-600 font-semibold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-indigo-600 after:rounded-full">Komunitas</a>
+                <a href="#contacts" class="hover:text-indigo-600 transition-colors">Kontak</a>
+            </div>
+
+            <!-- Actions & Auth -->
+            <div class="flex items-center gap-3">
+                <a href="#signin" class="hidden sm:inline-flex px-5 py-2 rounded-full text-sm font-semibold text-indigo-700 bg-indigo-50/80 hover:bg-indigo-100 transition-colors">
+                    Masuk
+                </a>
+                <a href="#signup" class="btn-gradient px-5 py-2 rounded-full text-sm font-semibold text-white">
+                    Buat Akun
                 </a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
-                    <a href="#home" class="hover:text-sky-600 transition-colors">Beranda</a>
-                    <a href="#about" class="hover:text-sky-600 transition-colors">Tentang Kami</a>
-                    <a href="#services" class="hover:text-sky-600 transition-colors">Layanan</a>
-                    <a href="#portfolio" class="hover:text-sky-600 transition-colors">Portofolio</a>
-                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-slate-900 text-white hover:bg-sky-600 transition-all shadow-md hover:shadow-sky-500/25 active:scale-95">Hubungi Kami</a>
+                <!-- Language Switcher -->
+                <div class="relative ml-1 group">
+                    <button class="w-9 h-9 glass-button rounded-full flex items-center justify-center text-slate-600 hover:text-indigo-600">
+                        <i class="fa-solid fa-globe"></i>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-36 glass-panel rounded-2xl py-2 hidden group-hover:block shadow-xl border border-white/80">
+                        <a href="#" class="flex items-center px-4 py-1.5 text-xs font-semibold text-indigo-600 bg-indigo-50/50">
+                            <span class="mr-2">🇮🇩</span> Indonesia
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-1.5 text-xs text-slate-600 hover:bg-slate-50">
+                            <span class="mr-2">🇺🇸</span> English
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-1.5 text-xs text-slate-600 hover:bg-slate-50">
+                            <span class="mr-2">🇷🇺</span> Русский
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 lg:px-8 pt-6 pb-20 space-y-16">
+
+        <section id="home" class="relative pt-6 pb-8">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-button text-xs font-semibold text-indigo-600">
+                        <span>KOMUNITAS</span>
+                        <i class="fa-solid fa-sparkles text-amber-400"></i>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+                        Bersama menciptakan <br/>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">
+                            masa depan gaya
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed">
+                        Bergabunglah dengan komunitas Midjourney — bagikan karya, temukan orang-orang dengan minat yang sama, dan dapatkan inspirasi setiap hari.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button class="btn-gradient px-7 py-3.5 rounded-full text-white font-semibold text-sm flex items-center gap-3 group">
+                            <span>Bergabung Sekarang</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button class="glass-button px-6 py-3.5 rounded-full text-slate-700 font-semibold text-sm flex items-center gap-2 hover:text-indigo-600">
+                            <i class="fa-regular fa-shield-check text-indigo-500"></i>
+                            <span>Aturan Komunitas</span>
+                        </button>
+                    </div>
+
+                    <!-- Counter Metrics -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-indigo-100/60">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-100/80 text-indigo-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-slate-900 text-lg sm:text-xl">1.2M+</div>
+                                <div class="text-xs text-slate-500 font-medium">Anggota</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-100/80 text-purple-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-slate-900 text-lg sm:text-xl">50K+</div>
+                                <div class="text-xs text-slate-500 font-medium">Karya/Hari</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-pink-100/80 text-pink-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-slate-900 text-lg sm:text-xl">120+</div>
+                                <div class="text-xs text-slate-500 font-medium">Negara</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100/80 text-amber-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-slate-900 text-lg sm:text-xl">24/7</div>
+                                <div class="text-xs text-slate-500 font-medium">Aktif</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobileMenuBtn" aria-label="Buka Menu" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
-                        <i id="menuIcon" class="fa-solid fa-bars text-2xl"></i>
+                <!-- Hero Right Column (3D Artwork Visual) -->
+                <div class="lg:col-span-5 relative flex items-center justify-center">
+                    <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-purple-400/30 rounded-full blur-3xl -z-10 animate-pulse-glow"></div>
+                    
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl p-6 glass-panel shadow-2xl flex items-center justify-center overflow-hidden border border-white/80">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Futuristic Glass Abstract Art" class="w-full h-full object-cover rounded-2xl shadow-inner animate-float" />
+                        
+                        <div class="absolute top-8 right-8 glass-card p-3 rounded-2xl shadow-lg animate-float-delayed flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800">+2.4k Suka</p>
+                                <p class="text-[10px] text-slate-500">Pilihan Komunitas</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-8 left-8 glass-card p-3 rounded-2xl shadow-lg animate-float flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-600">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800">Midjourney v6.0</p>
+                                <p class="text-[10px] text-slate-500">Hasil Prompt</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="collections" class="space-y-6">
+            <!-- Filter Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex flex-wrap items-center gap-2 p-1.5 glass-panel rounded-full">
+                    <button onclick="filterWorks('popular')" id="tab-popular" class="filter-tab active px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-indigo-600 text-white shadow-md transition-all">
+                        Populer
+                    </button>
+                    <button onclick="filterWorks('new')" id="tab-new" class="filter-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-white/50 transition-all">
+                        Terbaru
+                    </button>
+                    <button onclick="filterWorks('subscriptions')" id="tab-subscriptions" class="filter-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-white/50 transition-all">
+                        Langganan
+                    </button>
+                    <button onclick="filterWorks('week')" id="tab-week" class="filter-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-white/50 transition-all">
+                        Terbaik Minggu Ini
+                    </button>
+                    <button onclick="filterWorks('month')" id="tab-month" class="filter-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-white/50 transition-all">
+                        Terbaik Bulan Ini
                     </button>
                 </div>
+
+                <button class="btn-gradient-orange px-6 py-2.5 rounded-full text-white text-sm font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Publikasikan Karya</span>
+                </button>
             </div>
-        </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
-            <a href="#home" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600">Beranda</a>
-            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600">Tentang Kami</a>
-            <a href="#services" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600">Layanan</a>
-            <a href="#portfolio" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600">Portofolio</a>
-            <a href="#contact" class="mobile-link block text-center px-4 py-2.5 rounded-xl bg-sky-600 text-white font-medium hover:bg-sky-700">Hubungi Kami</a>
-        </div>
-    </nav>
+            <!-- Artwork Grid Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- FEATURED BIG CARD (Ethereal Jellyfish) -->
+                <div class="sm:col-span-2 sm:row-span-2 glass-card rounded-3xl overflow-hidden group relative flex flex-col justify-end min-h-[420px] lg:min-h-[500px]">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80" alt="Ethereal Jellyfish" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/30 to-transparent"></div>
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-indigo-500/80 text-white backdrop-blur-md">
+                            UNGGULAN
+                        </span>
+                    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden relative">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-sky-200/40 to-indigo-200/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-                <!-- Text Left -->
-                <div class="space-y-6 text-center lg:text-left">
-                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200/60 text-sky-700 text-xs font-semibold tracking-wide uppercase">
-                        <span class="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
-                        Solusi Digital Masa Depan
-                    </span>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
-                        Wujudkan Ide Digital dengan <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-indigo-600">Teknologi Modern</span>
-                    </h1>
-                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Kami membantu bisnis Anda tumbuh lebih cepat melalui pembuatan website interaktif, desain UI/UX premium, dan sistem yang responsif serta aman.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-                        <a href="#contact" class="px-8 py-3.5 rounded-full bg-sky-600 text-white font-semibold hover:bg-sky-700 transition-all shadow-lg shadow-sky-500/30 text-center active:scale-95">
-                            Mulai Proyek <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    <div class="relative p-6 text-white space-y-3 z-10">
+                        <div class="flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/100?img=32" alt="Anna K." class="w-9 h-9 rounded-full ring-2 ring-indigo-400">
+                            <div>
+                                <p class="text-sm font-bold">Anna K.</p>
+                                <p class="text-[11px] text-slate-300">Seniman Digital 3D</p>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-extrabold tracking-tight">Ethereal Jellyfish</h3>
+                        
+                        <div class="flex items-center gap-6 text-xs text-slate-300 pt-1">
+                            <button onclick="toggleLike(this)" class="flex items-center gap-1.5 hover:text-pink-400 transition-colors">
+                                <i class="fa-regular fa-heart text-sm"></i>
+                                <span>1.2K</span>
+                            </button>
+                            <span class="flex items-center gap-1.5">
+                                <i class="fa-regular fa-eye text-sm"></i>
+                                <span>12.5K</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Time Capsule -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative flex flex-col justify-end min-h-[250px]">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80" alt="Time Capsule" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    
+                    <div class="relative p-4 text-white z-10 space-y-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="Lucas Z." class="w-6 h-6 rounded-full ring-1 ring-white">
+                            <span class="text-xs font-medium text-slate-200">Lucas Z.</span>
+                        </div>
+                        <h4 class="text-base font-bold">Time Capsule</h4>
+                        <div class="flex items-center gap-4 text-xs text-slate-300 pt-1">
+                            <button onclick="toggleLike(this)" class="flex items-center gap-1 hover:text-pink-400">
+                                <i class="fa-regular fa-heart"></i>
+                                <span>843</span>
+                            </button>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>7.1K</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Soft Bloom -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative flex flex-col justify-end min-h-[250px]">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Soft Bloom" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    
+                    <div class="relative p-4 text-white z-10 space-y-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <img src="https://i.pravatar.cc/100?img=47" alt="Sofia R." class="w-6 h-6 rounded-full ring-1 ring-white">
+                            <span class="text-xs font-medium text-slate-200">Sofia R.</span>
+                        </div>
+                        <h4 class="text-base font-bold">Soft Bloom</h4>
+                        <div class="flex items-center gap-4 text-xs text-slate-300 pt-1">
+                            <button onclick="toggleLike(this)" class="flex items-center gap-1 hover:text-pink-400">
+                                <i class="fa-regular fa-heart"></i>
+                                <span>932</span>
+                            </button>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>8.3K</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: Neon Reflections -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative flex flex-col justify-end min-h-[250px]">
+                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80" alt="Neon Reflections" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    
+                    <div class="relative p-4 text-white z-10 space-y-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <img src="https://i.pravatar.cc/100?img=60" alt="Cyber AI" class="w-6 h-6 rounded-full ring-1 ring-white">
+                            <span class="text-xs font-medium text-slate-200">Cyber AI</span>
+                        </div>
+                        <h4 class="text-base font-bold">Neon Reflections</h4>
+                        <div class="flex items-center gap-4 text-xs text-slate-300 pt-1">
+                            <button onclick="toggleLike(this)" class="flex items-center gap-1 hover:text-pink-400">
+                                <i class="fa-regular fa-heart"></i>
+                                <span>1.5K</span>
+                            </button>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>14.2K</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 5: Dream Unicorn -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative flex flex-col justify-end min-h-[250px]">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Dream Unicorn" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    
+                    <div class="relative p-4 text-white z-10 space-y-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <img src="https://i.pravatar.cc/100?img=25" alt="Mia L." class="w-6 h-6 rounded-full ring-1 ring-white">
+                            <span class="text-xs font-medium text-slate-200">Mia L.</span>
+                        </div>
+                        <h4 class="text-base font-bold">Dream Unicorn</h4>
+                        <div class="flex items-center gap-4 text-xs text-slate-300 pt-1">
+                            <button onclick="toggleLike(this)" class="flex items-center gap-1 hover:text-pink-400">
+                                <i class="fa-regular fa-heart"></i>
+                                <span>765</span>
+                            </button>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>6.2K</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 6: Prism Geometry -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative flex flex-col justify-end min-h-[250px]">
+                    <img src="https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&w=600&q=80" alt="Prism Geometry" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    
+                    <div class="relative p-4 text-white z-10 space-y-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <img src="https://i.pravatar.cc/100?img=15" alt="Designer X" class="w-6 h-6 rounded-full ring-1 ring-white">
+                            <span class="text-xs font-medium text-slate-200">Designer X</span>
+                        </div>
+                        <h4 class="text-base font-bold">Prism Geometry</h4>
+                        <div class="flex items-center gap-4 text-xs text-slate-300 pt-1">
+                            <button onclick="toggleLike(this)" class="flex items-center gap-1 hover:text-pink-400">
+                                <i class="fa-regular fa-heart"></i>
+                                <span>1.1K</span>
+                            </button>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>9.8K</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 7: Light Butterfly -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative flex flex-col justify-end min-h-[250px]">
+                    <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=600&q=80" alt="Light Butterfly" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    
+                    <div class="relative p-4 text-white z-10 space-y-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <img src="https://i.pravatar.cc/100?img=68" alt="Visionary" class="w-6 h-6 rounded-full ring-1 ring-white">
+                            <span class="text-xs font-medium text-slate-200">Visionary</span>
+                        </div>
+                        <h4 class="text-base font-bold">Light Butterfly</h4>
+                        <div class="flex items-center gap-4 text-xs text-slate-300 pt-1">
+                            <button onclick="toggleLike(this)" class="flex items-center gap-1 hover:text-pink-400">
+                                <i class="fa-regular fa-heart"></i>
+                                <span>689</span>
+                            </button>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>5.4K</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                    <span>Aktivitas Komunitas</span>
+                    <i class="fa-solid fa-sparkles text-indigo-500 text-lg"></i>
+                </h2>
+                <a href="#" class="text-xs font-bold text-indigo-600 hover:text-indigo-800">Lihat Semua &rarr;</a>
+            </div>
+
+            <!-- Activity Horizontal Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                
+                <!-- Activity Card 1 -->
+                <div class="glass-card rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/100?img=32" alt="Anna K." class="w-8 h-8 rounded-full">
+                        <div class="text-xs">
+                            <p class="font-bold text-slate-900">Anna K.</p>
+                            <p class="text-slate-500 text-[11px]">menerbitkan karya baru</p>
+                        </div>
+                    </div>
+                    <div class="h-28 rounded-xl overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-medium">3 menit lalu</p>
+                </div>
+
+                <!-- Activity Card 2 -->
+                <div class="glass-card rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="Lucas Z." class="w-8 h-8 rounded-full">
+                        <div class="text-xs">
+                            <p class="font-bold text-slate-900">Lucas Z.</p>
+                            <p class="text-slate-500 text-[11px]">menyukai karya Anda</p>
+                        </div>
+                    </div>
+                    <div class="h-28 rounded-xl overflow-hidden relative flex items-center justify-center bg-indigo-50/50">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
+                        <div class="absolute w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-heart text-xs"></i>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-medium">15 menit lalu</p>
+                </div>
+
+                <!-- Activity Card 3 -->
+                <div class="glass-card rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/100?img=47" alt="Sofia R." class="w-8 h-8 rounded-full">
+                        <div class="text-xs">
+                            <p class="font-bold text-slate-900">Sofia R.</p>
+                            <p class="text-slate-500 text-[11px]">memberi komentar</p>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50/60 p-3 rounded-xl text-xs text-slate-700 italic border border-indigo-100">
+                        "Suasana yang luar biasa! Apa prompt yang digunakan?"
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-medium">28 menit lalu</p>
+                </div>
+
+                <!-- Activity Card 4 -->
+                <div class="glass-card rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/100?img=25" alt="Mia L." class="w-8 h-8 rounded-full">
+                        <div class="text-xs">
+                            <p class="font-bold text-slate-900">Mia L.</p>
+                            <p class="text-slate-500 text-[11px]">mulai mengikuti Anda</p>
+                        </div>
+                    </div>
+                    <div class="h-28 rounded-xl bg-purple-50/50 flex flex-col items-center justify-center text-purple-600 gap-1 border border-purple-100">
+                        <i class="fa-solid fa-user-plus text-2xl"></i>
+                        <span class="text-[10px] font-bold">Pengikut Baru</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-medium">1 jam lalu</p>
+                </div>
+
+                <!-- Activity Card 5 -->
+                <div class="glass-card rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/100?img=60" alt="Cyber AI" class="w-8 h-8 rounded-full">
+                        <div class="text-xs">
+                            <p class="font-bold text-slate-900">Cyber AI</p>
+                            <p class="text-slate-500 text-[11px]">menambahkan ke favorit</p>
+                        </div>
+                    </div>
+                    <div class="h-28 rounded-xl overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
+                        <div class="absolute bottom-2 right-2 w-7 h-7 rounded-lg bg-white/80 backdrop-blur-md text-amber-500 flex items-center justify-center shadow">
+                            <i class="fa-solid fa-bookmark text-xs"></i>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-medium">2 jam lalu</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="grid lg:grid-cols-12 gap-8">
+            <!-- Left Side: Discussions -->
+            <div class="lg:col-span-8 space-y-6">
+                <h2 class="text-2xl font-extrabold text-slate-900">Diskusi</h2>
+
+                <div class="space-y-4">
+                    <!-- Discussion Item 1 -->
+                    <div class="glass-card rounded-2xl p-5 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="https://i.pravatar.cc/100?img=47" alt="Sofia R." class="w-10 h-10 rounded-full">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm sm:text-base hover:text-indigo-600 cursor-pointer">
+                                    Bagaimana cara membuat palet warna yang unik?
+                                </h3>
+                                <p class="text-xs text-slate-500 mt-0.5">
+                                    <span class="text-indigo-600 font-semibold">Desain</span> &bull; Penulis: Sofia R.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs text-slate-400 whitespace-nowrap">
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-comment"></i> 128
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i> 2.4K
+                            </span>
+                            <span class="hidden sm:inline text-slate-400">15 menit lalu</span>
+                        </div>
+                    </div>
+
+                    <!-- Discussion Item 2 -->
+                    <div class="glass-card rounded-2xl p-5 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="Lucas Z." class="w-10 h-10 rounded-full">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm sm:text-base hover:text-indigo-600 cursor-pointer">
+                                    Tools AI terbaik untuk generasi objek 3D
+                                </h3>
+                                <p class="text-xs text-slate-500 mt-0.5">
+                                    <span class="text-indigo-600 font-semibold">3D / Render</span> &bull; Penulis: Lucas Z.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs text-slate-400 whitespace-nowrap">
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-comment"></i> 96
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i> 1.8K
+                            </span>
+                            <span class="hidden sm:inline text-slate-400">1 jam lalu</span>
+                        </div>
+                    </div>
+
+                    <!-- Discussion Item 3 -->
+                    <div class="glass-card rounded-2xl p-5 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="https://i.pravatar.cc/100?img=25" alt="Mia L." class="w-10 h-10 rounded-full">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm sm:text-base hover:text-indigo-600 cursor-pointer">
+                                    Berbagi prompt menarik untuk seni fantasi
+                                </h3>
+                                <p class="text-xs text-slate-500 mt-0.5">
+                                    <span class="text-indigo-600 font-semibold">Fantasi</span> &bull; Penulis: Mia L.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs text-slate-400 whitespace-nowrap">
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-comment"></i> 78
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="fa-regular fa-eye"></i> 1.3K
+                            </span>
+                            <span class="hidden sm:inline text-slate-400">3 jam lalu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Popular Tags -->
+            <div class="lg:col-span-4 space-y-6">
+                <h2 class="text-2xl font-extrabold text-slate-900">Tag Populer</h2>
+
+                <div class="glass-panel rounded-3xl p-6 space-y-4">
+                    <div class="flex flex-wrap gap-2.5">
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # digitalart
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # aiart
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # fantasy
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # 3d
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # abstract
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # neon
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # portrait
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # nature
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # illustration
+                        </button>
+                        <button onclick="toggleTag(this)" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/80 hover:bg-indigo-600 hover:text-white text-slate-700 border border-slate-200/80 transition-all shadow-sm">
+                            # cyberpunk
+                        </button>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="#" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
+                            <span>Lihat Semua Tag</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
-                        <a href="#portfolio" class="px-8 py-3.5 rounded-full bg-white text-slate-700 border border-slate-200 font-semibold hover:bg-slate-50 transition-all text-center active:scale-95">
-                            Lihat Karya Kami
-                        </a>
-                    </div>
-                    <!-- Stats -->
-                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-200/60 max-w-md mx-auto lg:mx-0">
-                        <div>
-                            <p class="text-2xl font-bold text-slate-900">150+</p>
-                            <p class="text-xs text-slate-500 font-medium">Proyek Selesai</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold text-slate-900">99%</p>
-                            <p class="text-xs text-slate-500 font-medium">Klien Puas</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold text-slate-900">5+ Thn</p>
-                            <p class="text-xs text-slate-500 font-medium">Pengalaman</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Graphic/Visual Right -->
-                <div class="relative flex justify-center">
-                    <div class="w-full max-w-md lg:max-w-none relative animate-float">
-                        <div class="bg-white rounded-3xl p-6 shadow-2xl border border-slate-100 relative z-10">
-                            <div class="flex items-center gap-2 mb-4">
-                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-                                <div class="ml-2 text-xs text-slate-400 font-mono">dashboard.nexastudio.id</div>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Preview Dashboard" class="rounded-xl w-full object-cover aspect-video shadow-inner">
-                            <div class="mt-4 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center">
-                                        <i class="fa-solid fa-chart-line text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs font-semibold text-slate-800">Performa Optimal</p>
-                                        <p class="text-[10px] text-slate-400">Peningkatan Trafik 85%</p>
-                                    </div>
-                                </div>
-                                <span class="px-2.5 py-1 text-[10px] font-medium text-emerald-600 bg-emerald-50 rounded-full">+24.5%</span>
-                            </div>
-                        </div>
-                        <!-- Decorative Badges -->
-                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-20 hidden sm:flex">
-                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-800">Kualitas Terbaik</p>
-                                <p class="text-[11px] text-slate-500">Rating 4.9/5 dari Klien</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Image Collages -->
-                <div class="relative">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Tim Kami" class="rounded-2xl shadow-lg w-full h-64 object-cover">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Diskusi Tim" class="rounded-2xl shadow-lg w-full h-64 object-cover mt-8">
-                    </div>
-                </div>
+    </main>
 
-                <!-- Right Content -->
-                <div class="space-y-6">
-                    <span class="text-sky-600 font-bold text-sm tracking-wider uppercase">Tentang Kami</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
-                        Membawa Inovasi Digital untuk Kemajuan Bisnis Anda
-                    </h2>
-                    <p class="text-slate-600 leading-relaxed">
-                        Nexa Studio adalah agensi kreatif digital yang berfokus pada pengembangan produk web dan solusi digital yang terukur. Kami memadukan estetika desain modern dengan performa kode yang optimal.
-                    </p>
-
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-800">Desain Responsif & Adaptif</h4>
-                                <p class="text-sm text-slate-500">Tampilan sempurna di smartphone, tablet, maupun komputer meja.</p>
-                            </div>
+    <footer class="border-t border-indigo-100/80 bg-white/40 backdrop-blur-md pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 space-y-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                
+                <!-- Col 1: Brand -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-m"></i>
                         </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-800">Kecepatan & Keamanan Tinggi</h4>
-                                <p class="text-sm text-slate-500">Dioptimalkan untuk waktu muat cepat dan proteksi standar industri.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-800">Dukungan Penuh & Maintenance</h4>
-                                <p class="text-sm text-slate-500">Tim kami siap membantu pemeliharaan sistem berkala untuk Anda.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="text-sky-600 font-bold text-sm tracking-wider uppercase">Layanan Kami</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Solusi Komprehensif Kebutuhan Anda</h2>
-                <p class="text-slate-600">Kami menawarkan berbagai solusi digital yang disesuaikan dengan skala dan target bisnis Anda.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Web Development</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Pembuatan website custom dari landing page hingga aplikasi web kompleks yang cepat dan SEO friendly.
-                    </p>
-                    <a href="#contact" class="text-sky-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                        Pelajari Selengkapnya <i class="fa-solid fa-chevron-right text-xs"></i>
+                        <span class="font-extrabold text-lg tracking-wider text-slate-900">MIDJOURNEY</span>
                     </a>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                    <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-pen-nib"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Desain UI/UX</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Perancangan antarmuka intuitif dan menarik yang memberikan pengalaman terbaik bagi pengguna Anda.
+                    <p class="text-xs text-slate-500 leading-relaxed max-w-sm">
+                        Platform inspirasi dan alat untuk membuat proyek visual unik dengan bantuan teknologi AI.
                     </p>
-                    <a href="#contact" class="text-sky-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                        Pelajari Selengkapnya <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </a>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">E-Commerce</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Toko online modern dengan sistem pembayaran otomatis, manajemen inventaris, dan kemudahan checkout.
-                    </p>
-                    <a href="#contact" class="text-sky-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                        Pelajari Selengkapnya <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <span class="text-sky-600 font-bold text-sm tracking-wider uppercase">Portofolio</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Karya Terbaru Kami</h2>
-                <p class="text-slate-600">Beberapa hasil proyek digital yang telah berhasil kami luncurkan.</p>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12" id="filterBtns">
-                <button data-filter="all" class="px-5 py-2 rounded-full text-sm font-medium bg-sky-600 text-white shadow-md active-filter">Semua</button>
-                <button data-filter="web" class="px-5 py-2 rounded-full text-sm font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Website</button>
-                <button data-filter="app" class="px-5 py-2 rounded-full text-sm font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Aplikasi Mobile</button>
-            </div>
-
-            <!-- Grid Items -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
-                <!-- Item 1 -->
-                <div class="portfolio-item web group relative overflow-hidden rounded-2xl shadow-md border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Website Perusahaan" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
-                        <span class="text-sky-400 text-xs font-semibold uppercase">Website</span>
-                        <h4 class="text-xl font-bold">Company Profile FinTech</h4>
-                        <p class="text-xs text-slate-300 mt-1">Website korporat modern dengan integrasi analitik real-time.</p>
+                    <div class="flex items-center gap-3 text-slate-500">
+                        <a href="#" class="w-8 h-8 rounded-full glass-button flex items-center justify-center hover:text-indigo-600"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full glass-button flex items-center justify-center hover:text-indigo-600"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full glass-button flex items-center justify-center hover:text-indigo-600"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full glass-button flex items-center justify-center hover:text-indigo-600"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
-                <div class="portfolio-item app group relative overflow-hidden rounded-2xl shadow-md border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Aplikasi Mobile" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
-                        <span class="text-sky-400 text-xs font-semibold uppercase">Aplikasi Mobile</span>
-                        <h4 class="text-xl font-bold">Aplikasi Fitness Tracker</h4>
-                        <p class="text-xs text-slate-300 mt-1">Aplikasi pelacak kebugaran dengan UI modern dan terstruktur.</p>
-                    </div>
+                <!-- Col 2: Products -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-900">Produk</h4>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li><a href="#" class="hover:text-indigo-600">Gaya Art</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">Koleksi</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">Generator AI</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">Langganan</a></li>
+                    </ul>
                 </div>
 
-                <!-- Item 3 -->
-                <div class="portfolio-item web group relative overflow-hidden rounded-2xl shadow-md border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1556742049-0a67d577c730?auto=format&fit=crop&w=600&q=80" alt="Toko Online" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
-                        <span class="text-sky-400 text-xs font-semibold uppercase">Website</span>
-                        <h4 class="text-xl font-bold">E-Commerce Modern</h4>
-                        <p class="text-xs text-slate-300 mt-1">Platform jual beli produk fashion dengan checkout cepat.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Info Left -->
-                <div class="space-y-6">
-                    <span class="text-sky-400 font-bold text-sm tracking-wider uppercase">Kontak Kami</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">Mari Bicara Tentang Proyek Anda</h2>
-                    <p class="text-slate-400 leading-relaxed">
-                        Punya gagasan menarik? Hubungi kami sekarang untuk berdiskusi dan dapatkan konsultasi gratis untuk proyek digital Anda.
-                    </p>
-
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-sky-400 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400">Email Kami</p>
-                                <p class="font-semibold text-slate-200">halo@nexastudio.id</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-sky-400 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400">Telepon / WhatsApp</p>
-                                <p class="font-semibold text-slate-200">+62 812 3456 7890</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-sky-400 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400">Lokasi Kantor</p>
-                                <p class="font-semibold text-slate-200">Balikpapan, Kalimantan Timur, Indonesia</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Col 3: Community -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-900">Komunitas</h4>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li><a href="#" class="hover:text-indigo-600">Galeri</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">Kompetisi</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">Blog</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">Forum</a></li>
+                    </ul>
                 </div>
 
-                <!-- Form Right -->
-                <div class="bg-slate-800/60 p-8 rounded-3xl border border-slate-700/60 backdrop-blur-md">
-                    <!-- Custom Alert Box -->
-                    <div id="alertBox" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
-
-                    <form id="contactForm" class="space-y-5">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Nama Lengkap</label>
-                            <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="Masukkan nama Anda">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Alamat Email</label>
-                            <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="nama@email.com">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Pesan Anda</label>
-                            <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="Ceritakan detail proyek Anda..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold transition-all shadow-lg shadow-sky-600/30 active:scale-[0.99]">
-                            Kirim Pesan
+                <!-- Col 4: Newsletter -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-900">Berlangganan Buletin</h4>
+                    <p class="text-xs text-slate-500">Dapatkan pembaruan tentang gaya baru dan fitur terbaru platform.</p>
+                    <form onsubmit="handleSubscribe(event)" class="relative flex items-center">
+                        <input type="email" required placeholder="Masukkan email Anda" class="w-full pl-4 pr-12 py-2.5 rounded-full text-xs glass-button text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button type="submit" class="absolute right-1 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 transition-colors">
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
                         </button>
                     </form>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs">&copy; 2026 Nexa Studio. Seluruh Hak Cipta Dilindungi.</p>
-            <div class="flex gap-4 text-slate-400">
-                <a href="#" class="hover:text-white transition-colors text-sm"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="hover:text-white transition-colors text-sm"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-white transition-colors text-sm"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+            <!-- Bottom Copyright & Lang -->
+            <div class="pt-6 border-t border-slate-200/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2024 Midjourney Style. Hak cipta dilindungi undang-undang.</p>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-globe"></i>
+                    <select class="bg-transparent font-medium cursor-pointer focus:outline-none">
+                        <option>Indonesia</option>
+                        <option>English</option>
+                        <option>Русский</option>
+                    </select>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Interactivity Script -->
     <script>
-        // Mobile Navigation Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+        // Gallery Filter Tab Handler
+        function filterWorks(tabKey) {
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
+                tab.classList.add('text-slate-600');
+            });
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
+            const activeTab = document.getElementById(`tab-${tabKey}`);
+            if (activeTab) {
+                activeTab.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+                activeTab.classList.remove('text-slate-600');
             }
-        });
+        }
 
-        // Close mobile menu when clicking a link
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            });
-        });
+        // Like Toggle Button
+        function toggleLike(btn) {
+            const icon = btn.querySelector('i');
+            const span = btn.querySelector('span');
+            let currentLikes = parseInt(span.innerText.replace(/[^0-9]/g, '')) || 0;
 
-        // Portfolio Filtering Logic
-        const filterBtns = document.querySelectorAll('#filterBtns button');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid', 'text-pink-500');
+                span.innerText = (currentLikes + 1) + (span.innerText.includes('K') ? 'K' : '');
+            } else {
+                icon.classList.remove('fa-solid', 'text-pink-500');
+                icon.classList.add('fa-regular');
+                span.innerText = span.innerText;
+            }
+        }
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active button styling
-                filterBtns.forEach(b => {
-                    b.classList.remove('bg-sky-600', 'text-white', 'shadow-md', 'active-filter');
-                    b.classList.add('bg-slate-100', 'text-slate-600');
-                });
-                btn.classList.remove('bg-slate-100', 'text-slate-600');
-                btn.classList.add('bg-sky-600', 'text-white', 'shadow-md', 'active-filter');
+        // Tag Toggle Selection
+        function toggleTag(btn) {
+            if (btn.classList.contains('bg-indigo-600')) {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('bg-white/80', 'text-slate-700');
+            } else {
+                btn.classList.add('bg-indigo-600', 'text-white');
+                btn.classList.remove('bg-white/80', 'text-slate-700');
+            }
+        }
 
-                const filter = btn.getAttribute('data-filter');
-
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.classList.contains(filter)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Contact Form Handler (No alert())
-        const contactForm = document.getElementById('contactForm');
-        const alertBox = document.getElementById('alertBox');
-
-        contactForm.addEventListener('submit', (e) => {
+        // Handle Newsletter Form
+        function handleSubscribe(e) {
             e.preventDefault();
-
-            // Simulate Form Submission
-            alertBox.className = "mb-6 p-4 rounded-xl text-sm font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
-            alertBox.innerHTML = "<i class='fa-solid fa-circle-check mr-2'></i> Pesan Anda telah terkirim! Tim kami akan menghubungi Anda segera.";
-            alertBox.classList.remove('hidden');
-
-            contactForm.reset();
-
-            setTimeout(() => {
-                alertBox.classList.add('hidden');
-            }, 5000);
-        });
+            const input = e.target.querySelector('input');
+            if (input && input.value) {
+                const messageBox = document.createElement('div');
+                messageBox.className = 'fixed bottom-6 right-6 bg-slate-900 text-white px-6 py-3 rounded-2xl shadow-2xl z-50 text-xs font-semibold border border-slate-700';
+                messageBox.innerText = 'Terima kasih telah berlangganan! Berita terbaru akan dikirimkan ke email Anda.';
+                document.body.appendChild(messageBox);
+                setTimeout(() => messageBox.remove(), 3500);
+                input.value = '';
+            }
+        }
     </script>
 </body>
 </html>
