@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Digital - Solusi Modern & Inovatif</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Keyframe Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-sky-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-cube text-xl"></i>
+                    </div>
+                    <span class="font-extrabold text-xl tracking-tight text-slate-900">MAUL BOTAK<span class="text-sky-600">STUDIO</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                    <a href="#home" class="hover:text-sky-600 transition-colors">Beranda</a>
+                    <a href="#about" class="hover:text-sky-600 transition-colors">Tentang Kami</a>
+                    <a href="#services" class="hover:text-sky-600 transition-colors">Layanan</a>
+                    <a href="#portfolio" class="hover:text-sky-600 transition-colors">Portofolio</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-slate-900 text-white hover:bg-sky-600 transition-all shadow-md hover:shadow-sky-500/25 active:scale-95">Hubungi Kami</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" aria-label="Buka Menu" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+                        <i id="menuIcon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600">Beranda</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600">Tentang Kami</a>
+            <a href="#services" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600">Layanan</a>
+            <a href="#portfolio" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600">Portofolio</a>
+            <a href="#contact" class="mobile-link block text-center px-4 py-2.5 rounded-xl bg-sky-600 text-white font-medium hover:bg-sky-700">Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden relative">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-sky-200/40 to-indigo-200/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Text Left -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200/60 text-sky-700 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
+                        Solusi Digital Masa Depan
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                        Wujudkan Ide Digital dengan <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-indigo-600">Teknologi Modern</span>
+                    </h1>
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Kami membantu bisnis Anda tumbuh lebih cepat melalui pembuatan website interaktif, desain UI/UX premium, dan sistem yang responsif serta aman.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#contact" class="px-8 py-3.5 rounded-full bg-sky-600 text-white font-semibold hover:bg-sky-700 transition-all shadow-lg shadow-sky-500/30 text-center active:scale-95">
+                            Mulai Proyek <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#portfolio" class="px-8 py-3.5 rounded-full bg-white text-slate-700 border border-slate-200 font-semibold hover:bg-slate-50 transition-all text-center active:scale-95">
+                            Lihat Karya Kami
+                        </a>
+                    </div>
+                    <!-- Stats -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-200/60 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">150+</p>
+                            <p class="text-xs text-slate-500 font-medium">Proyek Selesai</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">99%</p>
+                            <p class="text-xs text-slate-500 font-medium">Klien Puas</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">5+ Thn</p>
+                            <p class="text-xs text-slate-500 font-medium">Pengalaman</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic/Visual Right -->
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md lg:max-w-none relative animate-float">
+                        <div class="bg-white rounded-3xl p-6 shadow-2xl border border-slate-100 relative z-10">
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                                <div class="ml-2 text-xs text-slate-400 font-mono">dashboard.nexastudio.id</div>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Preview Dashboard" class="rounded-xl w-full object-cover aspect-video shadow-inner">
+                            <div class="mt-4 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center">
+                                        <i class="fa-solid fa-chart-line text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-slate-800">Performa Optimal</p>
+                                        <p class="text-[10px] text-slate-400">Peningkatan Trafik 85%</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 text-[10px] font-medium text-emerald-600 bg-emerald-50 rounded-full">+24.5%</span>
+                            </div>
+                        </div>
+                        <!-- Decorative Badges -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-20 hidden sm:flex">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800">Kualitas Terbaik</p>
+                                <p class="text-[11px] text-slate-500">Rating 4.9/5 dari Klien</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Image Collages -->
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Tim Kami" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Diskusi Tim" class="rounded-2xl shadow-lg w-full h-64 object-cover mt-8">
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="space-y-6">
+                    <span class="text-sky-600 font-bold text-sm tracking-wider uppercase">Tentang Kami</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                        Membawa Inovasi Digital untuk Kemajuan Bisnis Anda
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Nexa Studio adalah agensi kreatif digital yang berfokus pada pengembangan produk web dan solusi digital yang terukur. Kami memadukan estetika desain modern dengan performa kode yang optimal.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Desain Responsif & Adaptif</h4>
+                                <p class="text-sm text-slate-500">Tampilan sempurna di smartphone, tablet, maupun komputer meja.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Kecepatan & Keamanan Tinggi</h4>
+                                <p class="text-sm text-slate-500">Dioptimalkan untuk waktu muat cepat dan proteksi standar industri.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Dukungan Penuh & Maintenance</h4>
+                                <p class="text-sm text-slate-500">Tim kami siap membantu pemeliharaan sistem berkala untuk Anda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-sky-600 font-bold text-sm tracking-wider uppercase">Layanan Kami</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Solusi Komprehensif Kebutuhan Anda</h2>
+                <p class="text-slate-600">Kami menawarkan berbagai solusi digital yang disesuaikan dengan skala dan target bisnis Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Web Development</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Pembuatan website custom dari landing page hingga aplikasi web kompleks yang cepat dan SEO friendly.
+                    </p>
+                    <a href="#contact" class="text-sky-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                        Pelajari Selengkapnya <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Desain UI/UX</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Perancangan antarmuka intuitif dan menarik yang memberikan pengalaman terbaik bagi pengguna Anda.
+                    </p>
+                    <a href="#contact" class="text-sky-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                        Pelajari Selengkapnya <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">E-Commerce</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Toko online modern dengan sistem pembayaran otomatis, manajemen inventaris, dan kemudahan checkout.
+                    </p>
+                    <a href="#contact" class="text-sky-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                        Pelajari Selengkapnya <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-sky-600 font-bold text-sm tracking-wider uppercase">Portofolio</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Karya Terbaru Kami</h2>
+                <p class="text-slate-600">Beberapa hasil proyek digital yang telah berhasil kami luncurkan.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="filterBtns">
+                <button data-filter="all" class="px-5 py-2 rounded-full text-sm font-medium bg-sky-600 text-white shadow-md active-filter">Semua</button>
+                <button data-filter="web" class="px-5 py-2 rounded-full text-sm font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Website</button>
+                <button data-filter="app" class="px-5 py-2 rounded-full text-sm font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Aplikasi Mobile</button>
+            </div>
+
+            <!-- Grid Items -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
+                <!-- Item 1 -->
+                <div class="portfolio-item web group relative overflow-hidden rounded-2xl shadow-md border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Website Perusahaan" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+                        <span class="text-sky-400 text-xs font-semibold uppercase">Website</span>
+                        <h4 class="text-xl font-bold">Company Profile FinTech</h4>
+                        <p class="text-xs text-slate-300 mt-1">Website korporat modern dengan integrasi analitik real-time.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio-item app group relative overflow-hidden rounded-2xl shadow-md border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Aplikasi Mobile" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+                        <span class="text-sky-400 text-xs font-semibold uppercase">Aplikasi Mobile</span>
+                        <h4 class="text-xl font-bold">Aplikasi Fitness Tracker</h4>
+                        <p class="text-xs text-slate-300 mt-1">Aplikasi pelacak kebugaran dengan UI modern dan terstruktur.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio-item web group relative overflow-hidden rounded-2xl shadow-md border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1556742049-0a67d577c730?auto=format&fit=crop&w=600&q=80" alt="Toko Online" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+                        <span class="text-sky-400 text-xs font-semibold uppercase">Website</span>
+                        <h4 class="text-xl font-bold">E-Commerce Modern</h4>
+                        <p class="text-xs text-slate-300 mt-1">Platform jual beli produk fashion dengan checkout cepat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Info Left -->
+                <div class="space-y-6">
+                    <span class="text-sky-400 font-bold text-sm tracking-wider uppercase">Kontak Kami</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">Mari Bicara Tentang Proyek Anda</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Punya gagasan menarik? Hubungi kami sekarang untuk berdiskusi dan dapatkan konsultasi gratis untuk proyek digital Anda.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-sky-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email Kami</p>
+                                <p class="font-semibold text-slate-200">halo@nexastudio.id</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-sky-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Telepon / WhatsApp</p>
+                                <p class="font-semibold text-slate-200">+62 812 3456 7890</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-sky-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Lokasi Kantor</p>
+                                <p class="font-semibold text-slate-200">Balikpapan, Kalimantan Timur, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Right -->
+                <div class="bg-slate-800/60 p-8 rounded-3xl border border-slate-700/60 backdrop-blur-md">
+                    <!-- Custom Alert Box -->
+                    <div id="alertBox" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
+
+                    <form id="contactForm" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Nama Lengkap</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Alamat Email</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="nama@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Pesan Anda</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="Ceritakan detail proyek Anda..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold transition-all shadow-lg shadow-sky-600/30 active:scale-[0.99]">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs">&copy; 2026 Nexa Studio. Seluruh Hak Cipta Dilindungi.</p>
+            <div class="flex gap-4 text-slate-400">
+                <a href="#" class="hover:text-white transition-colors text-sm"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-white transition-colors text-sm"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition-colors text-sm"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactivity Script -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Portfolio Filtering Logic
+        const filterBtns = document.querySelectorAll('#filterBtns button');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button styling
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-sky-600', 'text-white', 'shadow-md', 'active-filter');
+                    b.classList.add('bg-slate-100', 'text-slate-600');
+                });
+                btn.classList.remove('bg-slate-100', 'text-slate-600');
+                btn.classList.add('bg-sky-600', 'text-white', 'shadow-md', 'active-filter');
+
+                const filter = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact Form Handler (No alert())
+        const contactForm = document.getElementById('contactForm');
+        const alertBox = document.getElementById('alertBox');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Simulate Form Submission
+            alertBox.className = "mb-6 p-4 rounded-xl text-sm font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
+            alertBox.innerHTML = "<i class='fa-solid fa-circle-check mr-2'></i> Pesan Anda telah terkirim! Tim kami akan menghubungi Anda segera.";
+            alertBox.classList.remove('hidden');
+
+            contactForm.reset();
+
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
